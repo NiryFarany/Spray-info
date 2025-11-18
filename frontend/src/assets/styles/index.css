@@ -1,0 +1,50 @@
+/*@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+/*@import "tailwindcss";-*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*mandeha avao ndre misy tsipiky jaune2 io*/
+
+.bg-gray-dark {
+  background-color: #7F8C8D; /* Gris foncé */
+}
+.bg-gradient {
+  background: linear-gradient(to right, #6A0DAD, #FF5E3A); /* Dégradé violet à rose */
+}
+:root {
+  --primary-color: #007BFF; /* Bleu Spray Info */
+  --secondary-color: #E0F7FA; /* Bleu clair pour fonds */
+  --text-color: #333;
+}
+body { background-color: var(--secondary-color); }
+.navbar { background-color: var(--primary-color); color: white; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Assure que le conteneur principal prend au moins la hauteur de la fenêtre */
+}
+
+.main-content {
+  flex: 1; /* Permet au contenu principal de prendre tout l'espace disponible */
+  overflow: auto; /* Permet le défilement si le contenu dépasse la hauteur */
+}
+/*
+marche io ambaony rehetra io
+*/
+/* src/assets/styles/index.css */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}

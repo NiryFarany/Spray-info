@@ -1,0 +1,106 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SprayInfoLogo from '../assets/images/sprayInfo.jpeg'; // Renommé pour plus de clarté
+import { FaBell } from "react-icons/fa";
+import { useState } from "react";
+import { FaUser } from "react-icons/fa";
+
+
+const Navbar = () => {
+  const [notifCount, setNotifCount] = useState(0);
+
+  const handleNotifClick = () => {
+    setNotifCount(0); // ou juste afficher les notifs
+  };
+
+  return (
+    // Augmentation de l'espace vertical (p-5 au lieu de p-4) et utilisation du thème bleu
+    <nav style={{ backgroundColor: '#314482' }} className="p-5 shadow-lg"> 
+      <div className="container mx-auto flex justify-between items-center">
+        
+        {/* Logo and Slogan Section */}
+        <div className="flex items-center">
+          
+          {/* Logo Spray Info (Agrandissement : h-12 w-12 au lieu de h-10 w-10) */}
+          <Link to="/" className="flex items-center">
+            <img 
+              src={SprayInfoLogo} 
+              alt="Spray Info Logo" 
+              className="h-12 w-12 rounded-full border-2 border-white transition transform hover:scale-105" // Agrandissement et style
+            />
+          </Link>
+
+          <div className="ml-4"> {/* Marge entre le logo et le titre */}
+            {/* Titre Principal */}
+            <Link to="/" className="text-white text-3xl font-extrabold tracking-tight hover:text-gray-100 transition"> 
+              Spray Info Formation
+            </Link>
+            
+            {/* Slogan (Style amélioré) */}
+            <p className="text-white text-sm italic opacity-90 mt-0.5"> 
+              Behind every success, there is sacrifice
+            </p>
+          </div>
+        </div>
+
+        {/* Menu Links */}
+        <div className="flex space-x-6 text-lg font-medium"> {/* Augmentation de l'espace et de la taille du texte des liens */}
+          <Link to="/" className="text-white hover:text-gray-200 transition">
+            Home
+          </Link>
+          <Link to="/formations" className="text-white hover:text-gray-200 transition">
+            Formation
+          </Link>
+          <Link to="/cart" className="text-white hover:text-gray-200 transition">
+            Cart
+          </Link>
+          <Link to="/checkout" className="text-white hover:text-gray-200 transition">
+            Checkout
+          </Link>
+          <Link to="/login" className="text-white hover:text-gray-200 transition">
+            Login
+          </Link>
+          <Link to="/register" className="text-white hover:text-gray-200 transition">
+            Register
+          </Link>
+          <Link to="/admin" className="text-white hover:text-gray-200 transition">
+            Admin
+          </Link>
+          <Link to="/aboutUs" className="text-white hover:text-gray-200 transition">
+            AboutUs
+          </Link>
+          {/*  */}
+          <FaUser size={24} style={{ color: "white", cursor: "pointer" }} />
+          <div style={{ position: "relative", cursor: "pointer" }} onClick={handleNotifClick}>
+    <FaBell size={24} style={{ color: "white" }} /> {/* Changez "blue" en la couleur souhaitée */}
+    {notifCount > 0 && (
+      <span
+        style={{
+          position: "absolute",
+          top: -5,
+          right: -5,
+          backgroundColor: "red",
+          color: "white",
+          borderRadius: "50%",
+          padding: "2px 6px",
+          fontSize: "12px",
+        }}
+      >
+        {notifCount}
+      </span>
+    )}
+</div>
+          {/*  */}
+        </div>
+        {/*  */}
+        
+        {/* */}
+      </div>
+      {/*  */}
+      
+      {/*  */}
+    </nav>
+  );
+};
+
+export default Navbar;
