@@ -1,4 +1,4 @@
-// src/components/Navbar.js → VERSION FINALE ABSOLUE (Tout est parfait maintenant)
+// src/components/Navbar.js → VERSION QUE TU AIMES À MOURir (agrandi + 2 boutons)
 
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,8 +11,7 @@ import {
   FaListAlt,
   FaUserCog,
   FaTachometerAlt,
-  FaHome,
-  FaInfoCircle
+  FaHome
 } from 'react-icons/fa';
 import SprayInfoLogo from '../assets/images/sprayInfo.jpeg';
 
@@ -42,10 +41,11 @@ const Navbar = () => {
 
   return (
     <nav className="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-2xl sticky top-0 z-50">
+      {/* HAUTEUR AGRANDIE → h-24 au lieu de h-20 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
 
-          {/* LOGO + TEXTE À GAUCHE */}
+          {/* LOGO + TEXTE À GAUCHE — PLUS GRAND ET MAJESTUEUX */}
           <Link to="/" className="flex items-center space-x-4 group">
             <img
               src={SprayInfoLogo}
@@ -58,8 +58,8 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* MENU CENTRAL — ESPACEMENT RÉDUIT POUR LAISSER DE LA PLACE AUX BOUTONS */}
-          <div className="hidden md:flex items-center space-x-10 text-xl font-medium">
+          {/* MENU CENTRAL — PLUS ESPACÉ, PLUS LARGE */}
+          <div className="hidden md:flex items-center space-x-16 text-xl font-medium">
             <Link to="/" className="hover:text-yellow-300 transition">Home</Link>
             <Link to="/formations" className="hover:text-yellow-300 transition">Formations</Link>
             <Link to="/cart" className="relative hover:text-yellow-300 transition">
@@ -70,13 +70,9 @@ const Navbar = () => {
                 </span>
               )}
             </Link>
-            <Link to="/aboutUs" className="hover:text-yellow-300 transition flex items-center space-x-2">
-              <FaInfoCircle size={20} />
-              <span>À Propos</span>
-            </Link>
           </div>
 
-          {/* MENU DROIT — TOUT EST BIEN ALIGNÉ, RIEN NE BOUGE */}
+          {/* MENU DROIT — COMME TU AIMES */}
           <div className="relative" ref={dropdownRef}>
             {user ? (
               <button
@@ -87,7 +83,7 @@ const Navbar = () => {
                 <span className="font-bold text-xl">{user.name}</span>
               </button>
             ) : (
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-5">
                 <Link
                   to="/login"
                   className="border-2 border-cyan-400 hover:bg-cyan-400 hover:text-blue-900 px-8 py-4 rounded-full font-bold text-xl transition shadow-xl"
@@ -103,7 +99,7 @@ const Navbar = () => {
               </div>
             )}
 
-            {/* Dropdown inchangé */}
+            {/* TON DROPDOWN MAGNIFIQUE — INCHANGÉ */}
             {isOpen && user && (
               <div className="absolute right-0 mt-4 w-72 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 z-50">
                 <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 text-center">
@@ -152,3 +148,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+//on a oublié Navbar

@@ -214,3 +214,86 @@ src/
 
 '''
 #pour la suite de service, avelako @ty
+
+#Fin projet
+'''
+src/
+├── components/
+│   ├── Navbar.js           # Terminé
+│   ├── Footer.js           # Terminé
+│   ├── CardFormations.js    # Terminé
+│   │── ProtectedRoute.js    # Terminé
+│
+├── pages/
+│   ├── Home.js             # À améliorer (juste quelques informations de base)
+│   ├── Login.js            # Terminé
+│   ├── Register.js         # Terminé
+│   ├── Formations.js       # Terminé
+│   ├── Cart.js             # Terminé
+│   ├── Checkout.js         # À améliorer mais fonctionnelle avec mocks
+│   │── Confirmation.js     #fini(resultat status pending de la commande)
+│   ├── Admin.js            # À améliorer (pas bien et fonctionnel)
+│   ├── AdminFormation.js    # Fini
+│   ├── AdminPersonnel.js     # À faire
+│   │── MyOrders.js          #Encours
+│   │── OrderDetail.js       #En cours
+│   │── AdminOrders.js       #En cours
+│   │── AboutUs.js           #Terminé
+       les autres pages
+├── services/
+│   ├── userService.js      # Basique (à connecter)
+│   ├── formationService.js  # Terminé (mocks)
+│   ├── paymentService.js    # À faire
+│   ├── orderService.js      # À faire
+├── context/
+│   ├── AuthContext.js      # À faire
+│   ├── CartContext.js      # Terminé mais juste pour mocks
+├── assets/
+│   ├── images/             # En cours
+│   ├── styles/             # En cours
+├── App.js                  # Partiellement fait
+├── index.js                # Terminé
+
+non maro mbola tsy ao
+'''
+
+#ty tsy asiko commentaires
+'''
+src/
+├── components/
+│   ├── Navbar.js           
+│   ├── Footer.js           
+│   ├── CardFormations.js    
+│   │── ProtectedRoute.js    
+│
+├── pages/
+│   ├── Home.js             
+│   ├── Login.js           
+│   ├── Register.js         
+│   ├── Formations.js     
+│   ├── Cart.js             
+│   ├── Checkout.js         
+│   │── Confirmation.js     
+│   ├── Admin.js            
+│   ├── AdminFormation.js   
+│   ├── AdminPersonnel.js    
+│   │── MyOrders.js         
+│   │── OrderDetail.js       
+│   │── AdminOrders.js      
+│   │── AboutUs.js          
+       les autres pages
+├── services/
+│   ├── userService.js      
+│   ├── formationService.js 
+│   ├── paymentService.js    
+│   ├── orderService.js    
+├── context/
+│   ├── AuthContext.js    
+│   ├── CartContext.js     
+├── assets/
+│   ├── images/           
+│   ├── styles/           
+├── App.js                 
+├── index.js               
+
+'''
