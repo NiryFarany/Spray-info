@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     environment {
-        REGISTRY = "docker.io/votre_username_dockerhub"
+        REGISTRY = "docker.io/noblette"
         PROJECT = "sprayinfo"
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')  // Ajout pour debug
     }
 
     stages {
