@@ -1,11 +1,71 @@
+
 version: "3.9"
 
 services:
+
+  # ------------------------
+  #   DATABASES
+  # ------------------------
+  user_db:
+    image: mysql:8.0
+    container_name: user_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: user_db
+    ports:
+      - "3307:3306"
+    networks:
+      - spray_network
+
+  formation_db:
+    image: mysql:8.0
+    container_name: formation_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: formation_db
+    ports:
+      - "3308:3306"
+    networks:
+      - spray_network
+
+  payment_db:
+    image: mysql:8.0
+    container_name: payment_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: payment_db
+    ports:
+      - "3309:3306"
+    networks:
+      - spray_network
+
+  order_db:
+    image: mysql:8.0
+    container_name: order_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: order_db
+    ports:
+      - "3310:3306"
+    networks:
+      - spray_network
+
+
+  # ------------------------
+  #   BACKEND SERVICES
+  # ------------------------
+
   user-service:
     build: ./backend/user-service
     container_name: user-service
     ports:
       - "5001:5000"
+    depends_on:
+      - user_db
     networks:
       - spray_network
 
@@ -14,6 +74,8 @@ services:
     container_name: formation-service
     ports:
       - "5002:5000"
+    depends_on:
+      - formation_db
     networks:
       - spray_network
 
@@ -22,6 +84,8 @@ services:
     container_name: payment-service
     ports:
       - "5003:5000"
+    depends_on:
+      - payment_db
     networks:
       - spray_network
 
@@ -30,14 +94,18 @@ services:
     container_name: order-service
     ports:
       - "5004:5000"
+    depends_on:
+      - order_db
     networks:
       - spray_network
 
+  # ------------------------
+  #   FRONTEND
+  # ------------------------
   frontend:
     build: ./frontend
     container_name: frontend
     ports:
-      #- "3000:80"
       - "3001:80"
     depends_on:
       - user-service
@@ -50,3 +118,4 @@ services:
 networks:
   spray_network:
     driver: bridge
+
