@@ -10,7 +10,8 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.getenv(
         'ORDER_DB_URI', 
         # 'mysql+pymysql://root:password@localhost:3306/order_db'
-        'mysql+pymysql://SprayInfo:tsyHaiko#123@localhost:3306/order_db'
+        #'mysql+pymysql://SprayInfo:tsyHaiko#123@localhost:3306/order_db'#t@localhost
+        'mysql+pymysql://SprayInfo:tsyHaiko#123@order_db:3306/order_db'
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.getenv('SECRET_KEY', 'order-secret-key')
