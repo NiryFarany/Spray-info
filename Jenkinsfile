@@ -5,6 +5,7 @@ pipeline {
     environment {
         REGISTRY = "docker.io/noblette"
         PROJECT = "sprayinfo"
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')  // Ajout pour debug
     }
 
     stages {
