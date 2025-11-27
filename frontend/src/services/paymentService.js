@@ -1,5 +1,6 @@
 // src/services/paymentService.js
-const PAYMENT_API = 'http://localhost:5004/';
+//const PAYMENT_API = 'http://localhost:5004/'; pour docker miala localhost
+const PAYMENT_API = 'http://payment-service:5000/';
 
 export const initiatePayment = async (orderId, phone) => {
   const response = await fetch(`${PAYMENT_API}/pay/${orderId}`, {

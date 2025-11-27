@@ -2,7 +2,8 @@
 //const ORDER_API = 'http://localhost:5003/api/orders';
 //const ORDER_API = 'http://localhost:5003/api/orders/'; //nasina slash ty
 //const ORDER_API = 'http://localhost:5003/api/orders'; //averiko tsy asina slash ty pour test bouton cancel et remmettre en pending, tsy miboaky koa gn commande
-const ORDER_API = 'http://localhost:5003/api/orders/';//averina @ty
+//const ORDER_API = 'http://localhost:5003/api/orders/';//averina @ty
+const ORDER_API = 'http://order-service:5000/api/orders/';//averina @ty, pour docker de miala ny localhost
 /* export const createOrder = async (userId, items) => {
   console.log('createOrder appelé !');
   console.log('Payload:', { user_id: userId, items: items.map(i => ({ formation_id: i.id })) });

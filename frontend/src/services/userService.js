@@ -1,5 +1,6 @@
 // src/services/userService.js
-const USER_API = 'http://localhost:5001';
+//const USER_API = 'http://localhost:5001';//miala le localhost pour docker
+const USER_API = 'http://user-service:5000';
 // src/services/userService.js
 
 export const register = async (data) => {
