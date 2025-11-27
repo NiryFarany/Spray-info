@@ -11,7 +11,8 @@ class Config:
         'ORDER_DB_URI', 
         # 'mysql+pymysql://root:password@localhost:3306/order_db'
         #'mysql+pymysql://SprayInfo:tsyHaiko#123@localhost:3306/order_db'#t@localhost
-        'mysql+pymysql://SprayInfo:tsyHaiko#123@order_db:3306/order_db'
+        #'mysql+pymysql://SprayInfo:tsyHaiko#123@order_db:3306/order_db'#pour config root @ docker 
+        'mysql+pymysql://root:root@order_db:3306/order_db'#pour config root
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.getenv('SECRET_KEY', 'order-secret-key')
