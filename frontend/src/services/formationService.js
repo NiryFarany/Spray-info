@@ -1,7 +1,7 @@
 export const getFormations = async () => {
   try {
     //const response = await fetch('http://localhost:5002/api/formations');//ty no mampifandray ny backend sy ny frontend
-    const response = await fetch('http://formation-service:5000/api/formations');//@docker miala ze localhost rehetra
+    const response = await fetch('http://formation-service:5000/api/formations');//@ docker miala ze localhost rehetra
     if (!response.ok) throw new Error('Erreur lors de la récupération des formations');
     return await response.json();
   } catch (error) {
